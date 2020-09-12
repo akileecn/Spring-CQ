@@ -510,13 +510,15 @@ public class CoolQ {
      * 响应内容为 JSON 数组，每个元素的内容和上面的 /get_group_member_info 接口相同，但对于同一个群组的同一个成员，获取列表时和获取单独的成员信息时，某些字段可能有所不同，例如 area、title 等字段在获取列表时无法获得，具体应以单独的成员信息为准。
      *
      * @param group_id 群号
+     * @param no_cache 是否不使用缓存（使用缓存可能更新不及时，但响应更快）
      * @return 结果
      */
-    public ApiListData<GroupMemberInfoData> getGroupMemberList(long group_id) {
+    public ApiListData<GroupMemberInfoData> getGroupMemberList(long group_id, boolean no_cache) {
         ApiEnum action = ApiEnum.GET_GROUP_MEMBER_LIST;
         JSONObject params = new JSONObject();
 
         params.put("group_id", group_id);
+        params.put("no_cache", no_cache);
         ApiListData<GroupMemberInfoData> result = apiHandler.sendApiMessage(botSession, action, params).toJavaObject(new TypeReference<ApiListData<GroupMemberInfoData>>() {
         });
 
