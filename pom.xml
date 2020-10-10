@@ -11,7 +11,7 @@
     </parent>
     <groupId>net.lz1998</groupId>
     <artifactId>spring-cq</artifactId>
-    <version>4.15.0.1</version>
+    <version>4.15.0.2</version>
     <name>Spring CQ</name>
     <description>This is a qq robot project.</description>
     <url>http://cq.lz1998.net</url>
@@ -27,19 +27,15 @@
             <url>http://www.gnu.org/licenses/gpl-3.0.html</url>
         </license>
     </licenses>
-    <scm>
-        <connection>scm:git:git@github.com:lz1998/spring-cq.git</connection>
-        <developerConnection>scm:git:git@github.com:lz1998/spring-cq.git</developerConnection>
-        <url>scm:git:git@github.com:lz1998/spring-cq.git</url>
-    </scm>
+
     <distributionManagement>
         <snapshotRepository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>aki-snapshots</id>
+            <url>https://nexus.akilee.top/repository/maven-snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>aki-releases</id>
+            <url>https://nexus.akilee.top/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
 
@@ -109,19 +105,7 @@
                     <target>8</target>
                 </configuration>
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                <version>1.6</version>-->
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <phase>verify</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>sign</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
-<!--            </plugin>-->
+
         </plugins>
     </build>
 </project>
